@@ -1,0 +1,39 @@
+body {
+    background: #0c500b;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    background: #e4f5dc;
+    border-radius: 8px;
+    padding: 30px; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    animation: slideIn 1s ease-out;
+    transition: box-shadow 0.3s ease; 
+    max-width: 600px; /* Adjust the value as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Hover effect for container */
+.container:hover {
+    box-shadow: 0 0 20px rgba(176, 212, 172, 0.7); 
+
+}
+
+.container {
+    max-width: 800px; /* Adjust the value to match your container's width */
+    margin: 5 auto; /* Center the container horizontally */
+    padding: 15px; /* Add some padding */
+}

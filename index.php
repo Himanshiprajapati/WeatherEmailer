@@ -1,38 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: #f5f5f5;
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .container {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            margin-top: 50px;
-            animation: slideIn 1s ease-out;
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
+
     <title>Weather Data Emailer</title>
 </head>
 <body>
 <div class="container">
-    <h2 style="color: #007bff; text-align: center;">Weather Data Emailer</h2>
+    <h2 style="color:#8fe16b; text-align: center;">Weather Data Emailer</h2>
     <form action="" method="post">
         <div class="mb-3">
             <label for="location" style="font-weight: bold;">Enter Location:</label>
@@ -42,7 +23,9 @@
             <label for="email" style="font-weight: bold;">Your Email:</label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Get Weather</button>
+        <button type="submit" class="btn btn-primary" style="width: 100%; background-color: #4CAF50; color: white;">Get Weather</button>
+
+
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -112,10 +95,14 @@ function sendEmail($content, $recipientEmail) {
     $mail->Subject = 'Current Weather Update';
     $mail->Body = $content;
 
-    if ($mail->send()) {
-        echo '<div class="alert alert-success" role="alert">Email sent successfully — check it out!</div>';
-    } else {
-        echo 'Email could not be sent. Error: ' . $mail->ErrorInfo;
-    }
+    
+if ($mail->send()) {
+    echo '<div class="container">';
+    echo '<div class="alert alert-success" role="alert">Email sent successfully — check it out!</div>';
+    echo '</div>';
+} else {
+    echo 'Email could not be sent. Error: ' . $mail->ErrorInfo;
+}
+
 }
 ?>
