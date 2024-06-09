@@ -1,5 +1,5 @@
 <?php
-$whatsappNumber = "{WhatsApp Number}"; // Replace with your WhatsApp number
+$whatsappNumber = "{$WhatsappNumber}"; // Replace with your WhatsApp number
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['location'])) {
     $location = htmlspecialchars($_POST['location']);
